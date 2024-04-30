@@ -1,24 +1,27 @@
 package com.paramjeet.productservice.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import lombok.*;
+import org.springframework.boot.autoconfigure.web.WebProperties;
 
 @Getter
 @Setter
 @AllArgsConstructor //generates all the constructors
 @NoArgsConstructor //no args constructor
-//@Entity
+@Entity
 
 public class Product {
-//    @Id
+    @Id
+//    @Generated(strategy= GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String description;
     private Double price;
 
-//    @ManyToOne
+    @ManyToOne
     private Category category;
     private String image;
 
